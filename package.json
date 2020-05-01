@@ -24,7 +24,9 @@
     "test": "nyc mocha && tsc",
     "lint": "eslint lib test check filter",
     "travis-build": "npm test && npm run lint",
-    "report-coverage": "cat coverage/lcov.info | coveralls"
+    "report-coverage": "cat coverage/lcov.info | coveralls",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "engines": {
     "node": ">= 6.0.0"
@@ -32,7 +34,8 @@
   "dependencies": {
     "@types/express": "~4.0.34",
     "lodash": "^4.16.0",
-    "validator": "~8.2.0"
+    "validator": "~8.2.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "chai": "2.3.0",
@@ -51,5 +54,6 @@
     "sanitize",
     "sanitization",
     "xss"
-  ]
+  ],
+  "snyk": true
 }
